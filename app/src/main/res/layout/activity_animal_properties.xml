@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AnimalPropertiesActivity"
+    android:background="@color/colorWhite">
+
+
+    <TextView
+        android:id="@+id/tv_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/averia_serif_libre_bold_italic"
+        android:text="@string/exist_pet"
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/move"
+        android:textSize="20dp"
+        android:background="@color/colorButton"
+        android:textColor="@color/colorWhite"
+        android:id="@+id/move"
+        android:layout_below="@+id/tv_question"
+        />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/move"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            app:tabBackground="@drawable/tab_color_selector"
+            app:tabTextColor="@color/colorText">
+
+        </android.support.design.widget.TabLayout>
+
+        <android.support.v4.view.ViewPager
+
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="45dp" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+
+</RelativeLayout>
