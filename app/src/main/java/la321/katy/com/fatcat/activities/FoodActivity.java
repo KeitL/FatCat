@@ -31,6 +31,7 @@ public class FoodActivity extends AppCompatActivity {
     @BindView(R.id.et_food_portion)
     EditText foodPortion;
     private DatabaseReference foodRef;
+    private DatabaseReference baseRef;
 
 
     @Override
@@ -69,9 +70,12 @@ public class FoodActivity extends AppCompatActivity {
             String time = df1.format(System.currentTimeMillis());
             Log.e("xxx", "date " + date + " time " + time);
             Feeding feeding = new Feeding(id, time, Long.parseLong(foodPortion.getText().toString()), "Katya");
-            foodRef.child(date).child(time).setValue(feeding);
+            foodRef.child("pets").child("-LbkTWdwxWi75mh5gfSp").child("feedings").child(date).child(time).setValue(feeding);
             Intent i = new Intent(FoodActivity.this, HistoryActivity.class);
             startActivity(i);
+
+
+
         } else {
             Toast.makeText(this, "No portion added", Toast.LENGTH_LONG).show();
         }

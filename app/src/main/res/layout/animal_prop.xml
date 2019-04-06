@@ -13,69 +13,61 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"/>
 
-    <TextView
-        android:id="@+id/tv_intro"
+    <Button
+        android:id="@+id/add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-
-        android:fontFamily="@font/averia_serif_libre_bold_italic"
-        android:text="Let's get acquainted"
-        android:textAlignment="center"
-        android:textColor="@color/colorText"
-        android:textSize="40sp"
+        android:layout_marginTop="118dp"
+        android:text="add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
-    <TextView
-        android:id="@+id/tv_question"
+    <Button
+        android:id="@+id/get"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/exist_pet"
-        android:textAlignment="center"
-        android:textColor="@color/colorText"
-        android:textSize="18sp"
-        android:textStyle="bold|italic"
+        android:text="get"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_intro" />
+        app:layout_constraintTop_toBottomOf="@+id/add" />
 
-    <android.support.design.widget.CoordinatorLayout
-        android:id="@+id/coordinator"
+    <Button
+        android:id="@+id/getPet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="0dp"
+        android:text="getPet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_question">
+        app:layout_constraintTop_toBottomOf="@+id/get"
+        tools:layout_editor_absoluteX="16dp" />
 
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorWhite"
-            app:tabBackground="@drawable/tab_color_selector"
-            app:tabTextColor="@color/colorText"
-            app:tabSelectedTextColor="@color/colorWhite">
+    <Button
+        android:id="@+id/getMove"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:text="move"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getPet"
+        tools:layout_editor_absoluteX="16dp" />
 
-        </android.support.design.widget.TabLayout>
-
-        <android.support.v4.view.ViewPager
-
-            android:id="@+id/viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="545dp"
-            android:layout_marginTop="45dp"
-            app:layout_anchor="@+id/tab_layout"
-            app:layout_anchorGravity="top|center" />
-
-    </android.support.design.widget.CoordinatorLayout>
+    <!--<TextView-->
+        <!--android:id="@+id/tv_intro"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="16dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginEnd="16dp"-->
+        <!--android:fontFamily="@font/averia_serif_libre_bold_italic"-->
+        <!--android:text="Let's get acquainted"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textColor="@color/colorText"-->
+        <!--android:textSize="40sp"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/toolbar3" />-->
 
 </android.support.constraint.ConstraintLayout>

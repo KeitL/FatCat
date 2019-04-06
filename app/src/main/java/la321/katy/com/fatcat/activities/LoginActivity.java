@@ -20,6 +20,9 @@ import la321.katy.com.fatcat.R;
 
 public class LoginActivity extends AppCompatActivity {
 
+    //todo check db rules
+    //todo insert validations
+    
     // to do insert toolbar with menu about us
     @BindView(R.id.et_email)
     TextView etEmail;

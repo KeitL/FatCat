@@ -5,10 +5,15 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import la321.katy.com.fatcat.App;
 import la321.katy.com.fatcat.R;
 
 public class SplashActivity extends AppCompatActivity {
+
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +45,14 @@ public class SplashActivity extends AppCompatActivity {
 //    }
 
     private void startRelevantActivity(){
-        if (!App.getInstance().getIsAboutActivityShown()){
-            startActivity(new Intent(SplashActivity.this, AboutActivity.class));
+
+//        if (!App.getInstance().getIsAboutActivityShown()){
+//            startActivity(new Intent(SplashActivity.this, AboutActivity.class));
+//            finish();
+//        } else{
+            startActivity(new Intent(SplashActivity.this, AnimalPropertiesActivity.class));
             finish();
-        } else{
-            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-            finish();
-        }
+       /// }
     }
 
 

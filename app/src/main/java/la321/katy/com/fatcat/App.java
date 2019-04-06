@@ -27,7 +27,17 @@ public class App extends Application {
     }
 
     public boolean getIsAboutActivityShown() {
-        return sharedPreferences.getBoolean(Constants.IS_ABOUT_ACTIVITY_SHOWN, false);
+        return sharedPreferences.contains(Constants.IS_ABOUT_ACTIVITY_SHOWN);
+    }
+
+    public void setPropertiesActivityShown(boolean status) {
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putBoolean(Constants.IS_ABOUT_ACTIVITY_SHOWN, true);
+        edit.commit();
+    }
+
+    public boolean getIsProrertiesActivityShown() {
+        return sharedPreferences.contains(Constants.IS_ABOUT_ACTIVITY_SHOWN);
     }
 
 
