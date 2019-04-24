@@ -15,11 +15,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:fontFamily="@font/yanone_kaffeesatz"
         android:text="@string/about_us"
         android:textAlignment="center"
-        android:textColor="@color/colorText"
-        android:textSize="14sp"
-        android:textStyle="italic"
+        android:textColor="#393a3c"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -31,10 +31,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:fontFamily="@font/averia_serif_libre_bold_italic"
+        android:fontFamily="@font/knewave"
         android:text="@string/about_us_tittle"
         android:textAlignment="center"
-        android:textColor="@color/colorText"
+        android:textColor="#1b1b1b"
         android:textSize="70sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,6 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_about_activity"
-        app:srcCompat="@drawable/cat_about" />
+        android:src="@drawable/katya2"
+        />
 
 </android.support.constraint.ConstraintLayout>

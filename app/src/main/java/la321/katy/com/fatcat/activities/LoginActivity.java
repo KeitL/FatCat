@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -36,8 +37,10 @@ public class LoginActivity extends AppCompatActivity {
     TextView passWarning;
     @BindView(R.id.tv_error_explanation)
     TextView errorWarning;
-    @BindView(R.id.progressBar)
-    ProgressBar progressBar;
+//    @BindView(R.id.progressBar)
+//    ProgressBar progressBar;
+    @BindView(R.id.tv_forget_pass)
+    TextView rememberPass;
 
 
 
@@ -46,6 +49,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        rememberPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(LoginActivity.this, "Still working on this", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
@@ -55,35 +64,34 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//                if (isFieldsEmpty(etEmail.getText().toString(), etPassword.getText().toString())) {
-//                    return;
-//                }
-//                if (isPassNotValid(etPassword.getText().toString())) {
-//                    return;
-//                }
-//                if (isEmailNotValid(etPassword.getText().toString())) {
-//                    return;
-//                }
+                if (isFieldsEmpty(etEmail.getText().toString(), etPassword.getText().toString())) {
+                    return;
+                }
+                if (isPassNotValid(etPassword.getText().toString())) {
+                    return;
+                }
+                if (isEmailNotValid(etEmail.getText().toString())) {
+                    return;
+                }
 
-                progressBar.setVisibility(View.VISIBLE);
-
-                //todo insert validations
+                //progressBar.setVisibility(View.VISIBLE);
+                tryToLogin(new OnLoginFinished() {
+                    @Override
+                    public void onLoginReady() {
+                        sendIntentToAdminActivity();
+                        // progressBar.setVisibility(View.GONE);
+                    }
+                });
 
                 tryToSignIn(new OnLoginFinished() {
                     @Override
                     public void onLoginReady() {
                         sendIntentToAdminActivity();
-                        progressBar.setVisibility(View.GONE);
+                       // progressBar.setVisibility(View.GONE);
                     }
                 });
 
-                tryToLogin(new OnLoginFinished() {
-                    @Override
-                    public void onLoginReady() {
-                        sendIntentToAdminActivity();
-                        progressBar.setVisibility(View.GONE);
-                    }
-                });
+
 
             }
         });
@@ -91,20 +99,24 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    public boolean tryToSignIn(OnLoginFinished loginFinished) {
+    public void tryToSignIn(OnLoginFinished loginFinished) {
         String email = etEmail.getText().toString();
         String pass = etPassword.getText().toString();
         boolean isSucceed = DbManager.getInstance().createUser(email, pass);
-        loginFinished.onLoginReady();
-        return isSucceed;
+        if (isSucceed){
+            loginFinished.onLoginReady();
+        }
+
+
     }
 
-    public boolean tryToLogin(OnLoginFinished loginFinished) {
+    public void tryToLogin(OnLoginFinished loginFinished) {
         String email = etEmail.getText().toString();
         String pass = etPassword.getText().toString();
         boolean isSucceed = DbManager.getInstance().connectToExistUser(email, pass);
-        loginFinished.onLoginReady();
-        return isSucceed;
+        if (isSucceed){
+            loginFinished.onLoginReady();
+        }
     }
 
     public void sendIntentToAdminActivity() {
@@ -113,51 +125,51 @@ public class LoginActivity extends AppCompatActivity {
         finish();
     }
 
-//    public boolean isFieldsEmpty(String emailfield, String passfield) {
-//        boolean editEmpty;
-//
-//        if (TextUtils.isEmpty(emailfield) && TextUtils.isEmpty(passfield)) {
-//            passWarning.setVisibility(View.VISIBLE);
-//            emailWarning.setVisibility(View.VISIBLE);
-//            errorWarning.setVisibility(View.VISIBLE);
-//            ///errorWarning.setText(R.string.cannot_be_empty_hint);
-//            editEmpty = true;
-//        } else {
-//            passWarning.setVisibility(View.GONE);
-//            emailWarning.setVisibility(View.GONE);
-//            errorWarning.setVisibility(View.GONE);
-//            editEmpty = false;
-//        }
-//        return editEmpty;
-//    }
-//
-//    public boolean isPassNotValid(String mPassString) {
-//
-//        if (TextUtils.isEmpty(mPassString) || mPassString.length() < 6) {
-//
-//            passWarning.setVisibility(View.VISIBLE);
-//            errorWarning.setVisibility(View.VISIBLE);
-//           /// errorWarning.setText(TextUtils.isEmpty(mPassString) ? R.string.cannot_be_empty_hint
-//               ///     : R.string.wrong_password_length_hint);
-//            return true;
-//        }
-//        return false;
-//    }
-//
-//    public boolean isEmailNotValid(String emailString) {
-//
-//        String regex = "^([_a-zA-Z0-9-]+(\\[._a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*(\\.[a-zA-Z]{1,6}))?$";
-//        Pattern pattern = Pattern.compile(regex);
-//        Matcher matcher = pattern.matcher(emailString);
-//        if (TextUtils.isEmpty(emailString) || !matcher.matches()) {
-//            emailWarning.setVisibility(View.VISIBLE);
-//            errorWarning.setVisibility(View.VISIBLE);
-//            //errorWarning.setText(
-//                //    TextUtils.isEmpty(emailString) ? R.string.cannot_be_empty_hint
-//                  //          : R.string.invalid_email_hint);
-//
-//            return true;
-//        }
-//        return false;
-//    }
+    public boolean isFieldsEmpty(String emailfield, String passfield) {
+        boolean editEmpty;
+
+        if (TextUtils.isEmpty(emailfield) && TextUtils.isEmpty(passfield)) {
+            passWarning.setVisibility(View.VISIBLE);
+            emailWarning.setVisibility(View.VISIBLE);
+            errorWarning.setVisibility(View.VISIBLE);
+            errorWarning.setText(R.string.cannot_be_empty_hint);
+            editEmpty = true;
+        } else {
+            passWarning.setVisibility(View.GONE);
+            emailWarning.setVisibility(View.GONE);
+            errorWarning.setVisibility(View.GONE);
+            editEmpty = false;
+        }
+        return editEmpty;
+    }
+
+    public boolean isPassNotValid(String mPassString) {
+
+        if (TextUtils.isEmpty(mPassString) || mPassString.length() < 6) {
+
+            passWarning.setVisibility(View.VISIBLE);
+            errorWarning.setVisibility(View.VISIBLE);
+            errorWarning.setText(TextUtils.isEmpty(mPassString) ? R.string.cannot_be_empty_hint
+                    : R.string.wrong_password_length_hint);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean isEmailNotValid(String emailString) {
+
+        String regex = "^([_a-zA-Z0-9-]+(\\[._a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*(\\.[a-zA-Z]{1,6}))?$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(emailString);
+        if (TextUtils.isEmpty(emailString) || !matcher.matches()) {
+            emailWarning.setVisibility(View.VISIBLE);
+            errorWarning.setVisibility(View.VISIBLE);
+            errorWarning.setText(
+                    TextUtils.isEmpty(emailString) ? R.string.cannot_be_empty_hint
+                            : R.string.invalid_email_hint);
+
+            return true;
+        }
+        return false;
+    }
 }

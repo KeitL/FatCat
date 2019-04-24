@@ -30,30 +30,19 @@ public class SplashActivity extends AppCompatActivity {
         }, 1000);
     }
 
- //   private void startRelevantActivity() {
-//        FirebaseUser currentUser = auth.getCurrentUser();
-//
-//        if (currentUser != null) {
-//
-//            Intent i = new Intent(SplashActivity.this, SplashActivity.class);
-//            startActivity(i);
-//        } else {
-//
-//            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-//        }
-//        finish();
-//    }
-
-    private void startRelevantActivity(){
-
-//        if (!App.getInstance().getIsAboutActivityShown()){
-//            startActivity(new Intent(SplashActivity.this, AboutActivity.class));
-//            finish();
-//        } else{
-            startActivity(new Intent(SplashActivity.this, AnimalPropertiesActivity.class));
+    private void startRelevantActivity() {
+        //if user not past about activity yet
+        if (!App.getInstance().getIsAboutActivityShown()) {
+            startActivity(new Intent(SplashActivity.this, AboutActivity.class));
+           // finish();}
+        } else if (user == null) {
+            //if user not exist
+            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
             finish();
-       /// }
+        } else {
+            startActivity(new Intent(SplashActivity.this, FoodActivity.class));
+            finish();
+        }
     }
-
 
 }

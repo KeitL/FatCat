@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FatCat</string>
+    <string name="app_name">Pet diet</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="email">Email</string>
     <string name="pass">Password</string>
@@ -14,8 +14,6 @@
     <string name="about_us">Hey. We application helps owners to balance the diet of Pets. We do not aim to tell you how much and how often to feed your pet. Each feed manufacturer specifies how much feed the animal needs at your weight and age. We know that you want to follow the regime of your pet and watch how much food he consumes. And FatCat will help you with that.</string>
     <string name="about_us_tittle">About Us</string>
     <string name="exist_pet">Is you pet already exist and your system and you additional pet owner?</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="move">move</string>
     <string name="write_your_email">Please write down your email, we have to check something.</string>
@@ -23,4 +21,9 @@
     <string name="please_login_and_we_can_move_on">Please login and we can move on</string>
     <string name="let_s_do_it">Let`s do it</string>
     <string name="error">*</string>
+    <string name="log_out">Log out</string>
+    <string name="wrong_password_length_hint">* Wrong password length</string>
+    <string name="cannot_be_empty_hint">* Cannot be empty</string>
+    <string name="invalid_email_hint">* Invalid email</string>
+
 </resources>

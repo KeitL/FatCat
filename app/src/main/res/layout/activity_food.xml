@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -12,10 +13,13 @@
         tools:context="la321.katy.com.fatcat.activities.FoodActivity">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar2"
+            android:id="@+id/tb_food_activity"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary" />
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/btn_save_feeding"
@@ -36,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:fontFamily="@font/averia_serif_libre_bold_italic"
             android:text="@string/do_you_want_to_feed_cat"
@@ -45,10 +49,11 @@
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.318"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+            app:layout_constraintTop_toBottomOf="@+id/tb_food_activity" />
 
-        <EditText
+        <android.support.v7.widget.AppCompatEditText
             android:id="@+id/et_food_portion"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
@@ -56,7 +61,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="40dp"
             android:ems="10"
-            android:importantForAutofill="no"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:textColor="#000000"
             android:inputType="number"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"

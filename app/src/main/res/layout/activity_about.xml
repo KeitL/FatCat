@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.AboutActivity">
+    tools:context=".activities.AboutActivity"
+    android:background="#FFFFFF">
 
     <include layout="@layout/content_about" />
 
@@ -15,9 +16,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:backgroundTint="@color/colorButton"
         android:scaleType="center"
         app:fabSize="normal"
+        android:backgroundTint="#0091d0"
         app:srcCompat="@drawable/move" />
 
 </android.support.design.widget.CoordinatorLayout>
