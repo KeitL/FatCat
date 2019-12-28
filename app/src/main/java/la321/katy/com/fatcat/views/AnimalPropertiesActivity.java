@@ -1,16 +1,13 @@
-package la321.katy.com.fatcat.activities;
+package la321.katy.com.fatcat.views;
 
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -21,8 +18,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import la321.katy.com.fatcat.R;
-import la321.katy.com.fatcat.ResultPagerAdapter;
-import la321.katy.com.fatcat.YesFragment;
 import la321.katy.com.fatcat.model.Pet;
 
 public class AnimalPropertiesActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package la321.katy.com.fatcat.activities;
+package la321.katy.com.fatcat.views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,10 +12,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,7 +25,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import la321.katy.com.fatcat.DocExpandableRecyclerAdapter;
+import la321.katy.com.fatcat.presenter.DocExpandableRecyclerAdapter;
 import la321.katy.com.fatcat.R;
 import la321.katy.com.fatcat.model.Feeding;
 import la321.katy.com.fatcat.model.FeedingDate;

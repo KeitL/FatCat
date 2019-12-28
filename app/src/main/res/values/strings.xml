@@ -25,5 +25,10 @@
     <string name="wrong_password_length_hint">* Wrong password length</string>
     <string name="cannot_be_empty_hint">* Cannot be empty</string>
     <string name="invalid_email_hint">* Invalid email</string>
+    <string name="cancel">Cancel</string>
+    <string name="send">Send</string>
+    <string name="title_forget_pass">Please write down your email..</string>
+    <string name="please_wait">Please Wait....</string>
+
 
 </resources>

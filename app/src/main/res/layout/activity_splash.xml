@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="la321.katy.com.fatcat.activities.SplashActivity"
+    tools:context="la321.katy.com.fatcat.views.SplashActivity"
     android:background="@color/colorWhite">
 
     <ImageView

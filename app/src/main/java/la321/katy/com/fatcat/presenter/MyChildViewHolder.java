@@ -1,9 +1,11 @@
-package la321.katy.com.fatcat;
+package la321.katy.com.fatcat.presenter;
 
 import android.view.View;
 import android.widget.TextView;
 
 import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder;
+
+import la321.katy.com.fatcat.R;
 
 public class MyChildViewHolder extends ChildViewHolder {
 

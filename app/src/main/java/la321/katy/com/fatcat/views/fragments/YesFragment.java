@@ -1,8 +1,6 @@
-package la321.katy.com.fatcat;
+package la321.katy.com.fatcat.views.fragments;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,8 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import la321.katy.com.fatcat.activities.AnimalPropertiesActivity;
-import la321.katy.com.fatcat.activities.LoginActivity;
+import la321.katy.com.fatcat.R;
+import la321.katy.com.fatcat.views.LoginActivity;
 
 
 ///A simple {@link Fragment} subclass.

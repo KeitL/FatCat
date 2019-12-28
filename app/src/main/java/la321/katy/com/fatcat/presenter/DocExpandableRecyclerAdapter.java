@@ -1,4 +1,4 @@
-package la321.katy.com.fatcat;
+package la321.katy.com.fatcat.presenter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,7 @@ import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 
 import java.util.List;
 
+import la321.katy.com.fatcat.R;
 import la321.katy.com.fatcat.model.Feeding;
 import la321.katy.com.fatcat.model.FeedingDate;
 

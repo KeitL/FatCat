@@ -1,8 +1,11 @@
-package la321.katy.com.fatcat;
+package la321.katy.com.fatcat.irelevant;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+
+import la321.katy.com.fatcat.views.fragments.NoFragment;
+import la321.katy.com.fatcat.views.fragments.YesFragment;
 
 public class ResultPagerAdapter extends android.support.v4.app.FragmentPagerAdapter {
     public ResultPagerAdapter(FragmentManager fm) {

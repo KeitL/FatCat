@@ -1,4 +1,4 @@
-package la321.katy.com.fatcat;
+package la321.katy.com.fatcat.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

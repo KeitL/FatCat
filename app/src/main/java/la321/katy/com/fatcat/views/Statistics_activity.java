@@ -1,4 +1,4 @@
-package la321.katy.com.fatcat.activities;
+package la321.katy.com.fatcat.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
