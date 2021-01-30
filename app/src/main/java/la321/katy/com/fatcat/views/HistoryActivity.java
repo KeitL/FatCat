@@ -2,17 +2,18 @@ package la321.katy.com.fatcat.views;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,8 +24,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import la321.katy.com.fatcat.presenter.DocExpandableRecyclerAdapter;
 import la321.katy.com.fatcat.R;
 import la321.katy.com.fatcat.model.Feeding;
@@ -32,11 +31,9 @@ import la321.katy.com.fatcat.model.FeedingDate;
 
 public class HistoryActivity extends AppCompatActivity {
 
-    @BindView(R.id.recycler_Expand)
+
     RecyclerView recycler_view;
-    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(R.id.fab_move_to_pet_prop)
     FloatingActionButton fab;
 
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -45,7 +42,6 @@ public class HistoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
-        ButterKnife.bind(this);
         setSupportActionBar(toolbar);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

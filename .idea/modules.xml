@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FatCat.iml" filepath="$PROJECT_DIR$/FatCat.iml" />
-      <module fileurl="file://$PROJECT_DIR$/FatCat.iml" filepath="$PROJECT_DIR$/FatCat.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FatCat.iml" filepath="$PROJECT_DIR$/.idea/modules/FatCat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FatCat.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FatCat.app.iml" />
     </modules>
   </component>
 </project>

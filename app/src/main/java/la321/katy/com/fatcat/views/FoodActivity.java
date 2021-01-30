@@ -1,9 +1,7 @@
 package la321.katy.com.fatcat.views;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +10,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -19,20 +20,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import la321.katy.com.fatcat.R;
 import la321.katy.com.fatcat.model.Feeding;
 
 public class FoodActivity extends AppCompatActivity {
 
-    @BindView(R.id.btn_show_history)
+
     Button btnShowHistory;
-    @BindView(R.id.btn_save_feeding)
     ImageButton btnSavefeeding;
-    @BindView(R.id.et_food_portion)
     EditText foodPortion;
-    @BindView(R.id.tb_food_activity)
     Toolbar toolbar;
     private DatabaseReference foodRef;
     private DatabaseReference baseRef;
@@ -44,7 +40,7 @@ public class FoodActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
-        ButterKnife.bind(this);
+
 
         setSupportActionBar(toolbar);
 

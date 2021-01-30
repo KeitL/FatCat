@@ -2,7 +2,6 @@ package la321.katy.com.fatcat.views;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -11,32 +10,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import la321.katy.com.fatcat.model.DbManager;
-import la321.katy.com.fatcat.OnLoginFinished;
 import la321.katy.com.fatcat.R;
 import la321.katy.com.fatcat.presenter.BasePresenter;
 import la321.katy.com.fatcat.presenter.LoginPresenter;
 
 public class LoginActivity extends BaseActivity implements LoginPresenter.View {
 
-    @BindView(R.id.et_email)
+
     TextView etEmail;
-    @BindView(R.id.et_pass)
     TextView etPassword;
-    @BindView(R.id.jump_in)
     Button btnJumpIn;
-    @BindView(R.id.tv_email_error)
     TextView emailWarning;
-    @BindView(R.id.tv_pass_error)
     TextView passWarning;
-    @BindView(R.id.tv_error_explanation)
     TextView errorWarning;
-    @BindView(R.id.tv_forget_pass)
     TextView rememberPass;
 
     LoginPresenter loginPresenter;
@@ -60,20 +46,20 @@ public class LoginActivity extends BaseActivity implements LoginPresenter.View {
     @Override
     protected void onStart() {
         super.onStart();
-        btnJumpIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showProgressDialog();
-                loginPresenter.tryToLoginOrREgister(etEmail.getText().toString(),etPassword.getText().toString());
-            }
-        });
+//        btnJumpIn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                showProgressDialog();
+//                loginPresenter.tryToLoginOrREgister(etEmail.getText().toString(),etPassword.getText().toString());
+//            }
+//        });
 
-        rememberPass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loginPresenter.rememberPass();
-            }
-        });
+//        rememberPass.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                loginPresenter.rememberPass();
+//            }
+//        });
 
 
     }

@@ -2,13 +2,13 @@ package la321.katy.com.fatcat.views;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import butterknife.ButterKnife;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import la321.katy.com.fatcat.R;
 import la321.katy.com.fatcat.presenter.BasePresenter;
 
@@ -22,7 +22,6 @@ public abstract class BaseActivity extends AppCompatActivity implements BasePres
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         setupToolbar();
-        bindViews();
         initElements();
         basePresenter = new BasePresenter(this);
     }
@@ -31,9 +30,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BasePres
         progressdialog = new ProgressDialog(this);
     }
 
-    private void bindViews() {
-        ButterKnife.bind(this);
-    }
+
 
     public void setupToolbar() {
         Toolbar toolbar = findViewById(getToolbar());
