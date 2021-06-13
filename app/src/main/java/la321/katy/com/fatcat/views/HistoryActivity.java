@@ -43,6 +43,7 @@ public class HistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
         setSupportActionBar(toolbar);
+        fab = findViewById(R.id.fab_move_to_pet_prop);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

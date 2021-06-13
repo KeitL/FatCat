@@ -3,18 +3,18 @@ package la321.katy.com.fatcat.views;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
 
 import la321.katy.com.fatcat.R;
-import la321.katy.com.fatcat.presenter.BasePresenter;
 import la321.katy.com.fatcat.presenter.LoginPresenter;
 
-public class LoginActivity extends BaseActivity implements LoginPresenter.View {
+public class LoginActivity extends AppCompatActivity implements LoginPresenter.View {
 
 
     TextView etEmail;
@@ -24,42 +24,41 @@ public class LoginActivity extends BaseActivity implements LoginPresenter.View {
     TextView passWarning;
     TextView errorWarning;
     TextView rememberPass;
-
     LoginPresenter loginPresenter;
 
     @Override
-    public void initElements() {
-        super.initElements();
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
         loginPresenter = new LoginPresenter(this);
-    }
+        btnJumpIn = findViewById(R.id.jump_in);
+        rememberPass = findViewById(R.id.tv_forget_pass);
+        etEmail = findViewById(R.id.et_email);
+        etPassword = findViewById(R.id.et_pass);
+        emailWarning = findViewById(R.id.tv_email_error);
+        passWarning = findViewById(R.id.tv_pass_error);
+        errorWarning = findViewById(R.id.tv_error_explanation);
 
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_login;
-    }
-
-    @Override
-    protected int getToolbar() {
-        return 0;
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-//        btnJumpIn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showProgressDialog();
-//                loginPresenter.tryToLoginOrREgister(etEmail.getText().toString(),etPassword.getText().toString());
-//            }
-//        });
+        btnJumpIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ///showProgressDialog();
+               // loginPresenter.tryToLoginOrREgister(etEmail.getText().toString(),etPassword.getText().toString());
+                sendIntentToAdminActivity();
+            }
+        });
 
-//        rememberPass.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                loginPresenter.rememberPass();
-//            }
-//        });
+        rememberPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginPresenter.rememberPass();
+            }
+        });
 
 
     }
@@ -67,7 +66,7 @@ public class LoginActivity extends BaseActivity implements LoginPresenter.View {
 
     public void sendIntentToAdminActivity() {
         Intent i = new Intent(LoginActivity.this, FoodActivity.class);
-        dissmissDialog();
+        //dissmissDialog();
         startActivity(i);
         finish();
     }

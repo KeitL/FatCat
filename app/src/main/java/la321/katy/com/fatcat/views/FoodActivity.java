@@ -31,7 +31,7 @@ public class FoodActivity extends AppCompatActivity {
     EditText foodPortion;
     Toolbar toolbar;
     private DatabaseReference foodRef;
-    private DatabaseReference baseRef;
+    //private DatabaseReference baseRef;
 
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
@@ -40,9 +40,11 @@ public class FoodActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
+        foodPortion = findViewById(R.id.et_food_portion);
 
 
         setSupportActionBar(toolbar);
+        btnShowHistory = findViewById(R.id.btn_show_history);
 
         btnShowHistory.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +56,7 @@ public class FoodActivity extends AppCompatActivity {
 
         foodRef = FirebaseDatabase.getInstance().getReference();
 
+        btnSavefeeding = findViewById(R.id.btn_save_feeding);
         btnSavefeeding.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,15 +78,13 @@ public class FoodActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        switch (id) {
-            case R.id.log_out:
-                firebaseAuth.signOut();
-                Intent i = new Intent(FoodActivity.this, LoginActivity.class);
-                startActivity(i);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (id == R.id.log_out) {
+            firebaseAuth.signOut();
+            Intent i = new Intent(FoodActivity.this, LoginActivity.class);
+            startActivity(i);
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     public void saveFood() {

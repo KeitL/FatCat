@@ -8,7 +8,7 @@
     tools:context=".views.HistoryActivity"
     tools:showIn="@layout/activity_history">
 
-    <view class="androidx.appcompat.app.AlertController$RecycleListView"
+    <view class="androidx.recyclerview.widget.RecyclerView"
         android:id="@+id/recycler_Expand"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
