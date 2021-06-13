@@ -7,13 +7,15 @@ import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 
 import java.util.List;
 
-public class FeedingDate extends ExpandableGroup<Feeding> {
+//public class FeedingDate extends ExpandableGroup<Feeding> {
+//
+//    public FeedingDate(String title, List<Feeding> items) {
+//        super(title, items);
+//    }
+//
+//    protected FeedingDate(Parcel in) {
+//        super(in);
+//    }
+//}
 
-    public FeedingDate(String title, List<Feeding> items) {
-        super(title, items);
-    }
 
-    protected FeedingDate(Parcel in) {
-        super(in);
-    }
-}

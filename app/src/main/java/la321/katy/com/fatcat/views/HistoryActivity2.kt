@@ -7,12 +7,17 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_about.*
+import kotlinx.android.synthetic.main.content_history.*
+import la321.katy.com.fatcat.DbHelper
 import la321.katy.com.fatcat.R
+import la321.katy.com.fatcat.RecyclerAdapter
 
 class HistoryActivity2:AppCompatActivity() {
     var toolbar: Toolbar? = null
+    private lateinit var linearLayoutManager: LinearLayoutManager
 
 
     private var firebaseAuth = FirebaseAuth.getInstance()
@@ -25,6 +30,21 @@ class HistoryActivity2:AppCompatActivity() {
             val i = Intent(this, FoodActivity2::class.java)
             startActivity(i)
         })
+
+
+//        linearLayoutManager = LinearLayoutManager(this)
+//        recycler_Expand.layoutManager = linearLayoutManager
+        DbHelper.getAllFeedings(){
+            it?.let {
+                recycler_Expand.apply {
+                    layoutManager = LinearLayoutManager(this@HistoryActivity2)
+                    adapter = RecyclerAdapter(it)
+                }
+            }
+
+        }
+
+
 
 //        recycler_Expand.layoutManager = LinearLayoutManager(this)
 //        val database = FirebaseDatabase.getInstance()

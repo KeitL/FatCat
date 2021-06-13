@@ -14,7 +14,7 @@ import la321.katy.com.fatcat.R;
 
 public class SplashActivity extends AppCompatActivity {
 
-    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,18 +32,21 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void startRelevantActivity() {
-        //if user not past about activity yet
-        if (!App.getInstance().getIsAboutActivityShown()) {
-            startActivity(new Intent(SplashActivity.this, AboutActivity.class));
-           // finish();}
-        } else if (user == null) {
-            //if user not exist
-            startActivity(new Intent(SplashActivity.this, LoginActivity2.class));
-            finish();
-        } else {
-            startActivity(new Intent(SplashActivity.this, FoodActivity2.class));
-            finish();
-        }
+//        //if user not past about activity yet
+//        if (!App.getInstance().getIsAboutActivityShown()) {
+//            startActivity(new Intent(SplashActivity.this, AboutActivity.class));
+//           // finish();}
+//        } else if (user == null) {
+//            //if user not exist
+//            startActivity(new Intent(SplashActivity.this, LoginActivity2.class));
+//            finish();
+//        } else {
+//            startActivity(new Intent(SplashActivity.this, FoodActivity2.class));
+//            finish();
+//        }
+
+        startActivity(new Intent(SplashActivity.this, LoginActivity2.class));
+        finish();
     }
 
 }

@@ -26,7 +26,7 @@ public class AboutActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 moveToNextActivity();
-                App.getInstance().setAboutActivityShown(true);
+                //App.setAboutActivityShown(true);
             }
         });
     }
