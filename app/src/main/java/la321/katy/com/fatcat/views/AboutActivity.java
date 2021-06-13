@@ -32,7 +32,7 @@ public class AboutActivity extends AppCompatActivity {
     }
 
     public void moveToNextActivity(){
-        Intent i = new Intent(AboutActivity.this, LoginActivity.class);
+        Intent i = new Intent(AboutActivity.this, LoginActivity2.class);
         startActivity(i);
     }
 

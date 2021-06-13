@@ -96,7 +96,7 @@ public class AnimalPropertiesActivity extends AppCompatActivity {
         move.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AnimalPropertiesActivity.this, FoodActivity.class);
+                Intent i = new Intent(AnimalPropertiesActivity.this, FoodActivity2.class);
                 startActivity(i);
             }
         });

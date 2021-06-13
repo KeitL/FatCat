@@ -38,10 +38,10 @@ public class SplashActivity extends AppCompatActivity {
            // finish();}
         } else if (user == null) {
             //if user not exist
-            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+            startActivity(new Intent(SplashActivity.this, LoginActivity2.class));
             finish();
         } else {
-            startActivity(new Intent(SplashActivity.this, FoodActivity.class));
+            startActivity(new Intent(SplashActivity.this, FoodActivity2.class));
             finish();
         }
     }
