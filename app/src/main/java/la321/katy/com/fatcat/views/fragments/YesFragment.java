@@ -10,7 +10,7 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 
 import la321.katy.com.fatcat.R;
-import la321.katy.com.fatcat.views.LoginActivity2;
+import la321.katy.com.fatcat.views.LoginActivity3;
 
 
 ///A simple {@link Fragment} subclass.
@@ -38,7 +38,7 @@ public class YesFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), LoginActivity2.class);
+                Intent i = new Intent(getActivity(), LoginActivity3.class);
                 startActivity(i);
             }
         });

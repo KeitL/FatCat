@@ -1,13 +1,12 @@
 package la321.katy.com.fatcat
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import la321.katy.com.fatcat.model.Feeding
+import la321.katy.com.fatcat.model.FeedingDate
 
-class RecyclerAdapter(var feedings: List<Feeding>): RecyclerView.Adapter<RecyclerAdapter.RecyclerHolder>()  {
+class RecyclerAdapter(var feedings: List<FeedingDate>): RecyclerView.Adapter<RecyclerAdapter.RecyclerHolder>()  {
 
     //1
     inner class RecyclerHolder(inflater: LayoutInflater, parent: ViewGroup) : RecyclerView.ViewHolder(inflater.inflate(R.layout.item_child, parent, false)) {
@@ -16,8 +15,8 @@ class RecyclerAdapter(var feedings: List<Feeding>): RecyclerView.Adapter<Recycle
                 mTitleView = itemView.findViewById(R.id.tv_date)
             }
 
-            fun bind(feeding: Feeding) {
-                mTitleView?.text = feeding.feedingTime
+            fun bind(feeding: FeedingDate) {
+                mTitleView?.text = feeding.title
             }
     }
 
@@ -27,7 +26,7 @@ class RecyclerAdapter(var feedings: List<Feeding>): RecyclerView.Adapter<Recycle
     }
 
     override fun onBindViewHolder(holder: RecyclerHolder, position: Int) {
-        val movie:Feeding = feedings[position]
+        val movie:FeedingDate = feedings[position]
         holder.bind(movie)
     }
 

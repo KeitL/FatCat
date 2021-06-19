@@ -29,6 +29,8 @@
     <string name="send">Send</string>
     <string name="title_forget_pass">Please write down your email..</string>
     <string name="please_wait">Please Wait....</string>
+    <string name="warning">*</string>
+    <string name="forgot_password">Forgot password?</string>
 
 
 </resources>

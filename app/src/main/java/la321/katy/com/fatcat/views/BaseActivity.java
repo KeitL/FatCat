@@ -78,7 +78,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BasePres
 
     @Override
     public void loggedOut() {
-        Intent i = new Intent(this, LoginActivity2.class);
+        Intent i = new Intent(this, LoginActivity3.class);
         dissmissDialog();
         startActivity(i);
     }

@@ -17,25 +17,25 @@ class App : Application() {
         sharedPreferences = getSharedPreferences(Constants.SETTINGS, Context.MODE_PRIVATE)
     }
 
-    fun setAboutActivityShown(status: Boolean) {
-        val edit = sharedPreferences?.edit()
-        edit?.putBoolean(Constants.IS_ABOUT_ACTIVITY_SHOWN, true)
-        edit?.commit()
-    }
-
-    fun getIsAboutActivityShown(): Boolean? {
-        return sharedPreferences?.contains(Constants.IS_ABOUT_ACTIVITY_SHOWN)
-    }
-
-    fun setPropertiesActivityShown(status: Boolean) {
-        val edit = sharedPreferences?.edit()
-        edit?.putBoolean(Constants.IS_ABOUT_ACTIVITY_SHOWN, true)
-        edit?.commit()
-    }
-
-    fun getIsProrertiesActivityShown(): Boolean? {
-        return sharedPreferences?.contains(Constants.IS_ABOUT_ACTIVITY_SHOWN)
-    }
+//    fun setAboutActivityShown(status: Boolean) {
+//        val edit = sharedPreferences?.edit()
+//        edit?.putBoolean(Constants.IS_ABOUT_ACTIVITY_SHOWN, true)
+//        edit?.commit()
+//    }
+//
+//    fun getIsAboutActivityShown(): Boolean? {
+//        return sharedPreferences?.contains(Constants.IS_ABOUT_ACTIVITY_SHOWN)
+//    }
+//
+//    fun setPropertiesActivityShown(status: Boolean) {
+//        val edit = sharedPreferences?.edit()
+//        edit?.putBoolean(Constants.IS_ABOUT_ACTIVITY_SHOWN, true)
+//        edit?.commit()
+//    }
+//
+//    fun getIsProrertiesActivityShown(): Boolean? {
+//        return sharedPreferences?.contains(Constants.IS_ABOUT_ACTIVITY_SHOWN)
+//    }
 
     fun getMyMainExecutor(): MainThreadExecutor {
         return AppExecutors().mainThreadExecutor as MainThreadExecutor

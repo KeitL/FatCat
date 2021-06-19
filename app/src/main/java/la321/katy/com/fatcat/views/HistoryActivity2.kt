@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,7 +16,7 @@ import la321.katy.com.fatcat.RecyclerAdapter
 
 class HistoryActivity2:AppCompatActivity() {
     var toolbar: Toolbar? = null
-    private lateinit var linearLayoutManager: LinearLayoutManager
+    //private lateinit var linearLayoutManager: LinearLayoutManager
 
 
     private var firebaseAuth = FirebaseAuth.getInstance()
@@ -26,15 +25,15 @@ class HistoryActivity2:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
         setSupportActionBar(toolbar)
-        fab_move_to_pet_prop.setOnClickListener(View.OnClickListener {
+        fab_move_to_pet_prop.setOnClickListener {
             val i = Intent(this, FoodActivity2::class.java)
             startActivity(i)
-        })
+        }
 
 
 //        linearLayoutManager = LinearLayoutManager(this)
 //        recycler_Expand.layoutManager = linearLayoutManager
-        DbHelper.getAllFeedings(){
+        DbHelper.getAllFeedings{
             it?.let {
                 recycler_Expand.apply {
                     layoutManager = LinearLayoutManager(this@HistoryActivity2)
@@ -85,11 +84,10 @@ class HistoryActivity2:AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
-        return when (id) {
+        return when (item.itemId) {
             R.id.log_out -> {
                 firebaseAuth.signOut()
-                val i = Intent(this, LoginActivity2::class.java)
+                val i = Intent(this, LoginActivity3::class.java)
                 startActivity(i)
                 true
             }

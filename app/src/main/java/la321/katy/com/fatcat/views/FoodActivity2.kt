@@ -11,12 +11,10 @@ import androidx.appcompat.widget.Toolbar
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_food.*
-import la321.katy.com.fatcat.App
 import la321.katy.com.fatcat.DbHelper
 import la321.katy.com.fatcat.R
-import la321.katy.com.fatcat.model.Database
-import la321.katy.com.fatcat.model.DbManager
 import la321.katy.com.fatcat.model.Feeding
+import la321.katy.com.fatcat.model.FeedingDate
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 
@@ -49,7 +47,7 @@ class FoodActivity2:AppCompatActivity() {
         val id = item.itemId
         if (id == R.id.log_out) {
             //firebaseAuth.signOut()
-            val i = Intent(this, LoginActivity2::class.java)
+            val i = Intent(this, LoginActivity3::class.java)
             startActivity(i)
             return true
         }
@@ -62,7 +60,10 @@ class FoodActivity2:AppCompatActivity() {
             val df1: DateFormat = SimpleDateFormat("HH:mm")
             val time = df1.format(System.currentTimeMillis())
             val feeding = Feeding(id, time, et_food_portion.text.toString().toLong(), "Katya")
-            DbHelper.createFeeding(feeding){
+            val list = mutableListOf<Feeding>()
+            list.add(feeding)
+            val feedingDate = FeedingDate(id, list)
+            DbHelper.createFeeding(feedingDate){
                 Log.e("xxx", "saved")
             }
             val i = Intent(this, HistoryActivity2::class.java)

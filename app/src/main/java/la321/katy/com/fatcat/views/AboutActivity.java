@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import la321.katy.com.fatcat.App;
 import la321.katy.com.fatcat.R;
 
 public class AboutActivity extends AppCompatActivity {
@@ -32,7 +31,7 @@ public class AboutActivity extends AppCompatActivity {
     }
 
     public void moveToNextActivity(){
-        Intent i = new Intent(AboutActivity.this, LoginActivity2.class);
+        Intent i = new Intent(AboutActivity.this, LoginActivity3.class);
         startActivity(i);
     }
 

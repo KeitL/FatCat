@@ -6,10 +6,6 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
-import la321.katy.com.fatcat.App;
 import la321.katy.com.fatcat.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -45,7 +41,7 @@ public class SplashActivity extends AppCompatActivity {
 //            finish();
 //        }
 
-        startActivity(new Intent(SplashActivity.this, LoginActivity2.class));
+        startActivity(new Intent(SplashActivity.this, LoginActivity3.class));
         finish();
     }
 
