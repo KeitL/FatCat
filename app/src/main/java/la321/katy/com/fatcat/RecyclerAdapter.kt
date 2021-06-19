@@ -5,18 +5,28 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import la321.katy.com.fatcat.model.FeedingDate
+import java.util.*
 
 class RecyclerAdapter(var feedings: List<FeedingDate>): RecyclerView.Adapter<RecyclerAdapter.RecyclerHolder>()  {
 
-    //1
     inner class RecyclerHolder(inflater: LayoutInflater, parent: ViewGroup) : RecyclerView.ViewHolder(inflater.inflate(R.layout.item_child, parent, false)) {
             private var mTitleView: TextView? = null
             init {
                 mTitleView = itemView.findViewById(R.id.tv_date)
             }
 
+
             fun bind(feeding: FeedingDate) {
-                mTitleView?.text = feeding.title
+                val dateLong = feeding.title.toLong()
+                val cal = GregorianCalendar.getInstance()
+                cal.timeInMillis = dateLong
+                val month = cal.get(Calendar.MONTH)+1
+                var monthString:String? = null
+                if (month == 6){
+                    monthString = "June"
+                }
+                val day = "${cal.get( Calendar.DATE)} $monthString"
+                mTitleView?.text = day
             }
     }
 
